@@ -7,6 +7,7 @@ module.exports = {
         'webpack/hot/dev-server',
         'webpack-dev-server/client?http://localhost:8080',
         './static/css/index.scss',
+        './static/js/index.js',
         './index.jsx'
     ],
     output: {
@@ -30,6 +31,12 @@ module.exports = {
     },
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
-        extractSASS
+        extractSASS,
+        new webpack.ProvidePlugin({
+            $: "jquery",
+            jQuery: "jquery",
+            "window.jQuery": "jquery"
+        })
+
     ]
 }
