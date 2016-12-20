@@ -1,6 +1,9 @@
-var webpack = require('webpack');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
+let webpack = require('webpack');
+let ExtractTextPlugin = require('extract-text-webpack-plugin');
 let extractSASS = new ExtractTextPlugin('./static/css/[name].css');
+let isProduction = function() {
+    return process.env.NODE_ENV === 'production';
+};
 
 module.exports = {
     entry: [
@@ -12,6 +15,9 @@ module.exports = {
     ],
     output: {
         filename: 'bundle.js'
+    },
+    resolve: {
+        extensions: ['', '.js', '.jsx']
     },
     module: {
         loaders: [{
@@ -36,7 +42,17 @@ module.exports = {
             $: "jquery",
             jQuery: "jquery",
             "window.jQuery": "jquery"
-        })
+        }),
 
     ]
+};
+
+if (process.env.NODE_ENV === 'production') {
+    module.exports.plugins = (module.exports.plugins || []).concat([
+        new webpack.optimize.UglifyJsPlugin({
+            compress: {
+                warnings: false
+            }
+        })
+    ])
 }

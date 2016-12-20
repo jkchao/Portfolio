@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import About from './About.jsx';
-import Ability from './Ability.jsx';
-import Items from './Items.jsx';
+import About from './About';
+import Ability from './Ability';
+import Items from './Items';
 
 class Content extends Component {
     render() {
