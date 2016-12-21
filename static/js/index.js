@@ -1,57 +1,48 @@
 $(function() {
-    let arr = [],
-
-        //屏幕宽度>1200
-        arr1 = [
+    //屏幕宽度>768
+    let arr1 = [
             [0, 1, 2, 3],
             [4, 5, 6, 7],
             [8, 9, 10, 11]
         ],
-        //屏幕宽度<1200
+        //屏幕宽度<768
         arr2 = [
             [0, 1, 2],
             [3, 4, 5],
             [6, 7, 8],
             [9, 10, 11]
         ];
-    if (window.innerWidth > 768) {
-        arr = arr1;
-    } else {
-        arr = arr2;
-    }
+
+    let arr = window.innerWidth > 768 ? arr1 : arr2;
     window.onresize = function() {
-        if (window.innerWidth > 768) {
-            arr = arr1;
-        } else {
-            arr = arr2;
-        }
+        return arr = window.innerWidth > 768 ? arr1 : arr2;
     }
 
     function Moving() {
         this.index = $(this).index();
         //点击下标所在数组
-        this.arr = (() => {
+        this.arr = () => {
             for (let i = 0; i < arr.length; i++) {
                 if (arr[i].indexOf(this.index) != -1) {
                     return arr[i];
                 }
             }
-        })();
+        };
         //对应数组位置
-        this.m = arr.indexOf(this.arr);
+        this.m = arr.indexOf(this.arr());
         //数组里元素对应的位置
-        this.n = this.arr.indexOf(this.index);
+        this.n = this.arr().indexOf(this.index);
 
         //transform
         this.change = $(this).css('transform', 'scale(1.3)');
         //水平
         this.moveHorizon = (() => {
-            for (let i = 0; i < this.arr.length; i++) {
+            for (let i = 0; i < this.arr().length; i++) {
                 if (i < this.n) {
-                    $('.icons').eq(this.arr[i]).css('transform', 'translate(-20px)')
+                    $('.icons').eq(this.arr()[i]).css('transform', 'translate(-20px)')
                 }
                 if (i > this.n) {
-                    $('.icons').eq(this.arr[i]).css('transform', 'translate(20px)')
+                    $('.icons').eq(this.arr()[i]).css('transform', 'translate(20px)')
                 }
             }
         })();
