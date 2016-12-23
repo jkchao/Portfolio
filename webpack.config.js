@@ -46,13 +46,3 @@ module.exports = {
 
     ]
 };
-
-if (isProduction) {
-    module.exports.plugins = (module.exports.plugins || []).concat([
-        new webpack.optimize.UglifyJsPlugin({
-            compress: {
-                warnings: false
-            }
-        })
-    ])
-}
