@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import {
     Grid,
     Row,
@@ -17,16 +17,16 @@ let tooltipCode = (
     ),
 
  Projects = [
-    {   
-        tooltip:tooltipCode,
-        Title:'Quotes',
-        src:'../static/images/Quotes.png',
-        text:`This is my first project on Freecodecamp, It's very easy. Showing a new random and sending to Twitter .`,
-        Code:'Html5, Css3, Javascript, JQuery.',
-        Layout:'Bootstrap',
-        i:'fa fa-codepen fa-2x',
-        href:'http://s.codepen.io/jkchao/debug/gwJYGR'
-    },
+    // {   
+    //     tooltip:tooltipCode,
+    //     Title:'Quotes',
+    //     src:'../static/images/Quotes.png',
+    //     text:`This is my first project on Freecodecamp, It's very easy. Showing a new random and sending to Twitter .`,
+    //     Code:'Html5, Css3, Javascript, JQuery.',
+    //     Layout:'Bootstrap',
+    //     i:'fa fa-codepen fa-2x',
+    //     href:'http://s.codepen.io/jkchao/debug/gwJYGR'
+    // },
     {   
         tooltip:tooltipCode,
         Title:'Wikipedia Viewer',
@@ -99,13 +99,23 @@ let tooltipCode = (
     },
     {
         tooltip:tooltipGithub,
+        Title:'Note',
+        src:'../static/images/Note.png',
+        text:`This is a app, used the Vue, Vue-router, Vuex`,
+        Code:'Html5, Css3, Javascript, Vue, Vuex-router,Vuex, Sass, npm,',
+        Layout:' Bootstrap.',
+        i:'fa fa-github fa-2x',
+        href:'https://github.com/jkchao/vue-note2'
+    },    
+    {
+        tooltip:tooltipGithub,
         Title:'A Portfolio',
         src:'../static/images/Page.png',
         text:`It is the page, a personal portfolio about me, useing React.js, Scss, ES6 and npm;`,
         Code:'Html5, Css3, Javascript, JQuery, Sass, npm, es6, react',
         Layout:'React-Bootstrap, Bootstrap,',
         i:'fa fa-github fa-2x',
-        href:'https://github.com/jkchao/koa'
+        href:'https://github.com/jkchao/Portfolio'
     },                                
 ]
 

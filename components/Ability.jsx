@@ -7,8 +7,8 @@ import {
     ProgressBar
 } from 'react-bootstrap';
 
-let Icons = ['fa fa-css3','fa fa-html5','fa fa-git','fa fa-github','fa fa-chrome']
-let Iconsm = ['js.png','jquery.png','bootstrap.png','react.png','sass.png','webpack.png','Node.png']
+let Icons = ['fa fa-css3','fa fa-html5','fa fa-git','fa fa-github']
+let Iconsm = ['js.png','jquery.png','bootstrap.png','react.png','Vue.png','sass.png','webpack.png','Node.png']
 class Ability extends Component {
 
     render() {
